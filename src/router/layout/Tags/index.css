@@ -1,0 +1,39 @@
+.ant-tag {
+  height: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.ant-tag:hover {
+  color: #2e93f8;
+}
+
+.ant-tag:hover .ant-tag-close-icon {
+  color: #2e93f8;
+}
+
+.ant-tag .ant-tag-close-icon {
+  padding: 2px;
+  margin-left: 10px;
+}
+
+.ant-tag .ant-tag-close-icon:hover {
+  color: #2e93f8;
+  background-color: rgb(240, 245, 253);
+  border-radius: 50%;
+}
+
+.tag-active {
+  color: #2e93f8;
+}
+
+.tag-active .ant-tag-close-icon {
+  color: #2e93f8;
+}
+
+.ant-wave {
+  display: none;
+}
