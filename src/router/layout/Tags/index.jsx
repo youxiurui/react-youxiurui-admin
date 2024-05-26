@@ -18,7 +18,6 @@ function Tags({ activeTag, changeTag }) {
     const getMeta = () => {
 
         const routeMatches = matchRoutes(router, location)
-
         const currentRoute = routeMatches ? routeMatches[routeMatches.length - 1].route : null
         const meta = currentRoute ? currentRoute.meta : {}
 

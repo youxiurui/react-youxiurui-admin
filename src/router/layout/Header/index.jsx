@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Dropdown } from 'antd'
 import './index.css'
 import Head from '@/static/images/head.jpg'
+import { isFullscreen, openFullscreen, closeFullscreen } from '@/utils/fullScreen'
 
 const items = [
   {
@@ -19,6 +20,14 @@ function Header({ changeCollapsed }) {
     setCollapsed(!collapsed)
     changeCollapsed(!collapsed)
     
+  }
+
+  const handleFullScreen = () => {
+    if (isFullscreen()) {
+      closeFullscreen()
+    } else {
+      openFullscreen()
+    }
   }
 
   return (
@@ -47,7 +56,7 @@ function Header({ changeCollapsed }) {
           <div className="item">
             <i className="iconfont icon-liangdian"></i>
           </div>
-          <div className="item">
+          <div className="item" onClick={handleFullScreen}>
             <i className="iconfont icon-quanping"></i>
           </div>
           <div className="item">
