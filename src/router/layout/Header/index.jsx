@@ -19,15 +19,11 @@ function Header({ changeCollapsed }) {
 
     setCollapsed(!collapsed)
     changeCollapsed(!collapsed)
-    
+
   }
 
   const handleFullScreen = () => {
-    if (isFullscreen()) {
-      closeFullscreen()
-    } else {
-      openFullscreen()
-    }
+    isFullscreen() ? closeFullscreen() : openFullscreen()
   }
 
   return (
