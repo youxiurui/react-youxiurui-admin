@@ -11,16 +11,21 @@ const useMeta = () => {
         const routeMatches = matchRoutes(router, location)
 
         const currentRoute = routeMatches ? routeMatches[routeMatches.length - 1].route : null
+        const meta = currentRoute ? currentRoute.meta : {}
 
-        return currentRoute ? currentRoute.meta : {}
+        return {
+            name: meta?.pathName,
+            path: location.pathname
+        }
 
     }
 
     const [meta, setMeta] = useState(getMeta())
 
     useEffect(() => {
-        
+
         const metaInfo = getMeta()
+        console.log(metaInfo, metaInfo === meta, 'metaInfo')
         setMeta(metaInfo)
 
     }, [location])

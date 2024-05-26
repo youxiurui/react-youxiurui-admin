@@ -15,8 +15,10 @@ function Header({ changeCollapsed }) {
   const [collapsed, setCollapsed] = useState(false)
 
   const triggerCollapsed = () => {
+
     setCollapsed(!collapsed)
     changeCollapsed(!collapsed)
+    
   }
 
   return (
@@ -49,7 +51,7 @@ function Header({ changeCollapsed }) {
             <i className="iconfont icon-quanping"></i>
           </div>
           <div className="item">
-            <a target="_blank" href="https://github.com/youxiurui/vue2-youxiurui-admin">
+            <a target="_blank" href="https://github.com/youxiurui/react-youxiurui-admin.git">
               <i className="iconfont icon-github"></i>
             </a>
           </div>

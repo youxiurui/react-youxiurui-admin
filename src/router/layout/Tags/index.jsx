@@ -31,13 +31,13 @@ function Tags({ activeTag, changeTag }) {
 
     useEffect(() => {
 
-        const tag = getMeta()
+        const metaInfo = getMeta()
 
-        changeTag(tag.path)
+        changeTag(metaInfo.path)
 
-        if (!tags.some(t => t.path === tag.path)) {
+        if (!tags.some(t => t.path === metaInfo.path)) {
 
-            const newTags = [...tags, tag]
+            const newTags = [...tags, metaInfo]
             setTags(newTags)
             localStorage.setItem('tags', JSON.stringify(newTags))
 
@@ -48,8 +48,9 @@ function Tags({ activeTag, changeTag }) {
     const handleClose = (tag) => {
 
         const index = tags.findIndex(t => t.path === tag.path)
+        const cache =  tags.filter((_, i) => i !== index)
 
-        setTags(tags => tags.filter((_, i) => i !== index))
+        setTags(cache)
 
         if (tag.path === location.pathname) {
             navigate(tags[index - 1].path)

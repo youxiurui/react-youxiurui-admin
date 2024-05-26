@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import routers from './router'
 
 function App() {

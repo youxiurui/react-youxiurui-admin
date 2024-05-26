@@ -15,6 +15,10 @@ const router = [
         children: [
             {
                 path: 'home',
+                meta: {
+                    pathName: "首页",
+                    icon: "icon-shouye",
+                },
                 element: <Home />
             },
             ...routerMock
